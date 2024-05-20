@@ -1,3 +1,4 @@
+
 const stories = [
     {
         id: 0,
@@ -55,7 +56,7 @@ const stories = [
     },
     {
         id: 6,
-        text: "Ah, mais je vois bien que vous êtes un aventurier dans l'âme, [insérer prénom], s'exclame-t-il avec enthousiasme. Vous cherchez juste un peu d'aventure pour remplir votre bourse et votre verre ! Pas de souci, je paie la première tournée si vous me dites votre nom !",
+        text:"",
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJglPyx_NNnrCtssD34D0yQr5q0u-i3SxFWMsR9anXNA&s',
         question: "Que voulez-vous faire ensuite ?",
         reponses: [
@@ -86,4 +87,95 @@ const stories = [
 
 
 
-export { stories };
+// // Variable globale pour stocker le prénom
+// let prenom = '';
+
+// // Fonctions pour créer des éléments HTML
+// function createImage(src) {
+//     const img = document.createElement('img');
+//     img.src = src;
+//     return img;
+// }
+
+// function createText(text) {
+//     const p = document.createElement('p');
+//     p.textContent = text;
+//     return p;
+// }
+
+// function createQuestion(question) {
+//     const p = document.createElement('p');
+//     p.textContent = question;
+//     return p;
+// }
+
+// function createInputPrenom() {
+//     const form = document.createElement('form');
+//     const input = document.createElement('input');
+//     input.type = 'text';
+//     input.id = 'prenom';
+//     input.name = 'prenom';
+//     input.placeholder = 'Entrez votre prénom';
+//     form.appendChild(input);
+//     form.addEventListener('submit', handleSubmit);
+//     return form;
+// }
+
+// function createButton(label, nextStoryId) {
+//     const button = document.createElement('button');
+//     button.textContent = label;
+//     button.addEventListener('click', function() { choisirReponse(nextStoryId); });
+//     return button;
+// }
+
+// // Fonction pour gérer la soumission du formulaire
+// function handleSubmit(event) {
+//     event.preventDefault();
+//     const inputElement = document.querySelector('#prenom');
+//     if (inputElement.value === '') {
+//         alert('Veuillez entrer un prénom.');
+//     } else {
+//         prenom = inputElement.value; // Stockez la valeur du prénom
+//         displayStory(); // Continuez avec l'affichage de l'histoire
+//     }
+// }
+
+// // Fonction pour afficher l'histoire actuelle
+// function displayStory() {
+//     const story = stories[currentStoryIndex];
+//     const bodyElement = document.querySelector('body');
+
+//     bodyElement.innerHTML = ''; // Nettoyez le contenu précédent
+
+//     bodyElement.appendChild(createImage(story.img));
+//     bodyElement.appendChild(createText(story.text));
+//     bodyElement.appendChild(createQuestion(story.question));
+
+//     if (story.id === 0) {
+//         bodyElement.appendChild(createInputPrenom()); 
+//     } else if (story.id === 6 && prenom) {
+//         const personalizedText = `Ah, mais je vois bien que vous êtes un aventurier dans l'âme, ${prenom}, s'exclame-t-il avec enthousiasme...`;
+//         bodyElement.appendChild(createText(personalizedText));
+//     }
+
+//     story.reponses.forEach(response => {
+//         bodyElement.appendChild(createButton(response.label, response.nextStoryId));
+//     });
+// }
+
+// // Fonction pour choisir une réponse et afficher la prochaine histoire
+// function choisirReponse(nextStoryId) {
+//     const nextStoryIndex = stories.findIndex(story => story.id === nextStoryId);
+//     if (nextStoryIndex !== -1) {
+//         currentStoryIndex = nextStoryIndex;
+//         displayStory();
+//     } else {
+//         console.log("Réponse invalide.");
+//     }
+// }
+
+// // Variable pour suivre l'index de l'histoire actuelle
+// let currentStoryIndex = 0;
+
+// // Initialisation pour afficher la première histoire
+// displayStory();
