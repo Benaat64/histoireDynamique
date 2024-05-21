@@ -1,5 +1,4 @@
-let prenomInput = '';
-const stories = [
+export const stories = [
     {
         id: 0,
         text: "Bienvenue à la Taverne de la Gargouille Mélancolique, un endroit où les murmures résonnent aussi fort que les chopes s'entrechoquent. Vous, cher aventurier, êtes attablé dans un coin sombre de cette auberge lugubre, entouré de personnages aussi pittoresques que les rats qui rôdent sous les tables.",
@@ -56,7 +55,9 @@ const stories = [
     },
     {
         id: 6,
-         text: `Ah, mais je vois bien que vous êtes un aventurier dans l'âme,${prenomInput}, s'exclame-t-il avec enthousiasme. Vous cherchez juste un peu d'aventure pour remplir votre bourse et votre verre ! Pas de souci, je paie la première tournée si vous me dites votre nom !`,
+        text:function(prenom){
+           return `Ah, mais je vois bien que vous êtes un aventurier dans l'âme, ${prenom}, s'exclame-t-il avec enthousiasme...`
+        },
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJglPyx_NNnrCtssD34D0yQr5q0u-i3SxFWMsR9anXNA&s',
         question: "Que voulez-vous faire ensuite ?",
         reponses: [
@@ -84,68 +85,3 @@ const stories = [
     },
     // Ajoutez d'autres histoires ici...
 ];
-
-
-function afficherImage(src) {
-    return `<img src='${src}'>`;
-}
-
-function afficherTexte(texte) {
-    return `<p>${texte}</p>`;
-}
-
-function afficherQuestion(question) {
-    return `<p>${question}</p>`;
-}
-
-function afficherInputPrenom() {
-    return `   
-        <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
-    `;
-}
-
-function afficherReponse(label, nextStoryId) {
-    return `<button onclick="choisirReponse(${nextStoryId})">${label}</button>`;
-}
-
-let currentStoryIndex = 0;
-
-function afficherHistoire() {
-    const story = stories[currentStoryIndex];
-    const bodyElement = document.querySelector('body');
-    let contenuHTML = `
-        ${afficherImage(story.img)}
-        ${afficherTexte(story.text)}
-        ${afficherQuestion(story.question)}
-    `;
-    if (story.id === 0) {
-        contenuHTML += afficherInputPrenom();
-        
-    }
-
-    contenuHTML += story.reponses.map(response => afficherReponse(response.label, response.nextStoryId))    // /!\ Map renvoie un TABLEAU !! /!\
-    bodyElement.innerHTML = contenuHTML;
-}
-
-
-function choisirReponse(nextStoryId) {
-    if (currentStoryIndex === 0) {
-        const inputPrenom = document.querySelector('#prenom');
-        if (inputPrenom) { 
-            if (inputPrenom.value === '') {
-                alert('Veuillez entrer un prénom.');
-                return;
-            }
-            prenomInput = inputPrenom.value; // Mettre à jour la valeur de prenomInput avec celle saisie dans l'input
-        }
-    }
-    // findIndex = vérification d'id/index entre tableaux, pour les relier. 
-    currentStoryIndex = stories.findIndex(story => story.id === nextStoryId);
-    if (currentStoryIndex !== -1) {
-        afficherHistoire();
-    } else {
-        console.log("Réponse invalide.");
-    }
-}
-
-afficherHistoire();
