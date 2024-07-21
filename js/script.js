@@ -3,7 +3,7 @@ let prenom = '';
 // Fonctions pour créer des éléments HTML
 function createImage(src) {
     const div = document.createElement('div');
-    div.className = 'image';
+    div.className = 'image is-5by4';
     const img = document.createElement('img');
     img.src = src;
     div.appendChild(img);
@@ -43,6 +43,7 @@ function createInputPrenom() {
     input.id = 'prenom';
     input.name = 'prenom';
     input.placeholder = 'Entrez votre prénom';
+    input.className ='input is-normal'
     form.appendChild(input);
     form.addEventListener('submit', handleSubmit);
     div.appendChild(form);

@@ -76,10 +76,10 @@ export const stories = [
         text: "Alors, cher aventurier, accepterez-vous cette offre alléchante malgré vos doutes ? Après tout, une tournée gratuite ne se refuse pas, n'est-ce pas ?",
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJglPyx_NNnrCtssD34D0yQr5q0u-i3SxFWMsR9anXNA&s',
         audio:'',
-        question: "Que voulez-vous faire ensuite ?",
+        question: "Voulez-vous recommencer ?",
         reponses: [
-            { label: "Non", nextStoryId: 0 },
-            { label: "Oui", nextStoryId: 8 }
+            { label: "Oui", nextStoryId: 0 },
+            { label: "Non", nextStoryId: 8 }
         ]
     },
     {
@@ -87,7 +87,7 @@ export const stories = [
         text: "bravo",
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJglPyx_NNnrCtssD34D0yQr5q0u-i3SxFWMsR9anXNA&s',
         audio:'',
-        question: "Que voulez-vous faire ensuite ?",
+        question: "Passez une bonne journée ! :)",
         reponses: [
  
         ]
