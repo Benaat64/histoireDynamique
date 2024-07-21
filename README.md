@@ -37,4 +37,4 @@ Ce prototype a servi de base pour comprendre et expérimenter les principes fond
 
 Merci d'avoir pris le temps de lire cette présentation.
 
-[Visitez le prototype en ligne]([(histoire-dynamique.vercel.app](https://histoire-dynamique.vercel.app))
+[Visitez le prototype en ligne](https://histoire-dynamique.vercel.app)
